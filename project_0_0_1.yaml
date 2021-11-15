@@ -1,18 +1,14 @@
-specVersion: 0.2.0
-name: entity-relation
-version: 1.0.0
+specVersion: 0.0.1
 description: This is an example of using 1-N relations
 repository: ''
-schema:
-  file: ./schema.graphql
+schema: ./schema.graphql
 network:
-  genesisHash: '0x91b171bb158e2d3848fa23a9f1c25182fb8e20313b2c1eb49219da7a70ce90c3'
-  endpoint: wss://polkadot.api.onfinality.io/public-ws
+  endpoint: 'wss://polkadot.api.onfinality.io/public-ws'
 dataSources:
-  - kind: substrate/Runtime
+  - name: main
+    kind: substrate/Runtime
     startBlock: 1
     mapping:
-      file: dist/index.js
       handlers:
         - handler: handleCall
           kind: substrate/CallHandler
